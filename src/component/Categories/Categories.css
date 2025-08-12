@@ -1,0 +1,261 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.category_section {
+  margin: 0 auto;
+}
+
+.trending-header {
+  /* width: 100%; */
+  margin: 20px auto;
+  padding-left: 140px;
+}
+
+.trending-header h1 {
+  font-weight: normal;
+}
+
+.slider-container {
+  display: flex;
+  align-items: center;
+  width: 80%;
+  margin: 20px auto;
+}
+
+.slider {
+  width: 1050px; /* 5 images * 210px each */
+  overflow: hidden;
+  /* border: 2px solid #ccc; */
+}
+
+.slide-track {
+  display: flex;
+  margin: 30px 20px;
+  /* transition: transform 0.5s ease; */
+}
+
+.slide {
+  width: 160px;
+  height: 250px;
+  margin-right: 30px;
+  object-fit: cover;
+  transition: transform 0.15s ease-in-out, border 0.15s ease-in-out;
+  border-radius: 10px;
+  box-sizing: border-box; /* Prevent border from increasing element size */
+  border: 1px solid transparent; /* Reserve space for the border */
+}
+
+.slide:hover {
+  transform: scale(1.045);
+  cursor: pointer;
+  border: 1px solid #5555553e; /* Changes color only, no size change */
+}
+
+.slider-btn {
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 50px 2px;
+  cursor: pointer;
+  border-radius: 8px;
+  margin: 0 10px;
+}
+
+.slider-btn:hover {
+  background-color: #555;
+}
+
+/* The Pop-up */
+/* Overlay background */
+.modal-overlay {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 60%;
+  height: 30%;
+  background-color: rgba(0, 0, 0, 0.7); /* dark blur */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  padding: 1rem;
+}
+
+/* Modal content */
+.movie-details {
+  background-color: #141414;
+  color: #fff;
+  width: 60%;
+  /* height: 50%; */
+  margin: 0 auto;
+  max-width: 600px; 
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);
+  animation: fadeInUp 0.3s ease-out;
+}
+
+/* Image section */
+.movie-details img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  position: relative;
+}
+
+/* Text section */
+.movie-details h3 {
+  font-size: 2rem;
+  margin: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-weight: 700;
+}
+
+.movie-details div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 0 1rem;
+}
+
+.movie-details div p {
+  background-color: #333;
+  padding: 4px 10px;
+  border-radius: 5px;
+  font-size: 0.8rem;
+}
+
+.movie-details > p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin: 1rem;
+}
+
+/* CTA Button */
+.Movie_button {
+  position: absolute;
+  top: 10px; /* how far from top */
+  right: 10px; /* push to the right */
+  background-color: transparent;
+  color: white;
+  border: none;
+  /* padding: 3px 3px; */
+  font-size: 2rem;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: background 0.3s ease;
+}
+
+.Movie_button:hover {
+  background-color: #f2f2f222;
+  border-radius: 10px;
+}
+
+.Movie_Button1 {
+  background-color: #e50914;
+  color: #fff;
+  font-size: 20px;
+  border: none;
+  border-radius: 5px;
+  padding: 15px 30px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+
+.Movie_Button1:hover {
+    background-color: #c2131b;
+}
+
+/* Close Button (X) */
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 2rem;
+  color: #fff;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+/* Animation */
+@keyframes fadeInUp {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+
+/* Responsiveness */
+
+@media screen and (max-width: 320px) {
+  .trending-header {
+    padding-left: 10px;
+  }
+
+  .trending-header h1 {
+    text-align: left;
+  }
+
+  .slider-container {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .trending-header {
+    padding-left: 10px;
+  }
+
+  .trending-header h1 {
+    text-align: left;
+  }
+
+  .slider-container {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .trending-header {
+    margin: 20px auto;
+    padding-left: 10px
+  }
+  
+  .trending-header h1 {
+    text-align: left;
+    padding-left: 160px;
+  }
+
+  .slider-container {
+    width: fit-content;
+  }
+}
+
+
+@media screen and (min-width: 2560px) {
+  .trending-header {
+    margin: 20px auto;
+    padding-left: 10px
+  }
+  
+  .trending-header h1 {
+    text-align: left;
+    padding-left: 700px;
+    font-size: 2rem;
+  }
+
+  .slider-container {
+    width: fit-content;
+  }
+}

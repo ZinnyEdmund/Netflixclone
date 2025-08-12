@@ -1,0 +1,145 @@
+/* DASHBOARD LAYOUT WRAPPER */
+.dashboard-layout {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* SIDEBAR (left fixed) */
+.sidebar {
+  width: 210px;
+  flex-shrink: 0;
+  background-color: #fff;
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 999;
+  transition: transform 0.3s ease;
+}
+
+/* AVATAR PANEL (right fixed) */
+.avatar {
+  width: 110px;
+  flex-shrink: 0;
+  background-color: #f9f9f9;
+  position: fixed;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 998;
+}
+
+/* Hamburger */
+.hamburger {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: 1001;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 3px;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.hamburger:hover {
+  background: #f9fafb;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.hamburger:active {
+  transform: scale(0.95);
+}
+
+/* MAIN CONTENT */
+.main-content {
+  flex: 1;
+  margin-left: 210px;
+  margin-right: 110px;
+  padding: 20px;
+  overflow-y: auto;
+  box-sizing: border-box;
+  transition: margin 0.3s ease;
+}
+
+/* HAMBURGER (default hidden on desktop) */
+.hamburger-container {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1001;
+  display: none;
+}
+
+.hamburger {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 28px;
+}
+
+/* ====== TABLETS (<=1024px) ====== */
+@media screen and (max-width: 1024px) {
+  .sidebar {
+    transform: translateX(-100%);
+  }
+
+  .sidebar.show {
+    transform: translateX(0);
+  }
+
+  .avatar {
+    display: none;
+  }
+
+  .main-content {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .hamburger-container {
+    display: block;
+  }
+}
+
+/* ====== PHONES (<=768px) ====== */
+@media screen and (max-width: 768px) {
+  .dashboard-layout {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .sidebar.show {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 220px;
+    background-color: #fff;
+    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
+  }
+}
+
+/* ====== SMALL PHONES (<=425px) ====== */
+@media screen and (max-width: 425px) {
+  .main-content {
+    padding: 16px;
+  }
+}
+
+/* ====== EXTRA SMALL PHONES (<=320px) ====== */
+@media screen and (max-width: 320px) {
+  .main-content {
+    padding: 12px;
+  }
+
+  .sidebar.show {
+    width: 200px;
+  }
+}

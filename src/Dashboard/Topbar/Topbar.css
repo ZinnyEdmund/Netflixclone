@@ -1,0 +1,311 @@
+.topbar {
+  color: #131720;
+  z-index: 1000;
+  padding: 15px 30px;
+  width: 100%; /* Changed from 92% for better mobile experience */
+  max-width: 1200px; /* Increased for better desktop experience */
+  box-sizing: border-box; /* Ensure padding is included in width */
+}
+
+.Topbar_content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px; /* Increased gap for better spacing */
+  width: 100%;
+}
+
+.topbar_left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 18px;
+  border: 1px solid #131720;
+  border-radius: 15px;
+  flex: 1; /* Allow it to grow and shrink */
+  min-width: 200px; /* Minimum width to prevent too much shrinking */
+  max-width: 350px; /* Maximum width on larger screens */
+}
+
+.topbar_left span {
+  color: #131720;
+  font-size: 16px; /* Slightly larger for better touch targets */
+  cursor: pointer;
+  transition: color 0.3s ease;
+  flex-shrink: 0; /* Prevent icons from shrinking */
+}
+
+.topbar_left span:hover {
+  color: #36476e;
+}
+
+.Topbar_input {
+  border-radius: 20px;
+  caret-color: black;
+  outline: none;
+  border: none;
+  background-color: transparent;
+  flex-grow: 1;
+  transition: all 0.3s ease;
+  font-size: 14px;
+  min-width: 90px; /* Prevent input from becoming too small */
+  width: 60%;
+}
+
+.Topbar_input::placeholder {
+  color: #131720;
+  font-weight: 500;
+}
+
+.topbar_right {
+  display: flex;
+  align-items: center;
+  gap: 15px; /* Reduced gap for mobile */
+  flex-shrink: 0; /* Prevent right section from shrinking too much */
+}
+
+.topbar_right p {
+  font-size: 20px;
+  cursor: pointer;
+  color: #131720;
+  transition: color 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px; /* Add padding for better touch targets */
+}
+
+.topbar_right p:hover {
+  color: #36476e;
+}
+
+.topbar_spanie {
+  width: 1px;
+  height: 20px;
+  background-color: #e0e0e0;
+  flex-shrink: 0;
+}
+
+.topbar_right img {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.topbar_user {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.topbar_user h4 {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0;
+  white-space: nowrap; /* Prevent text wrapping */
+}
+
+.topbar_user p {
+  font-size: 12px;
+  color: #6c757d;
+  margin: 0;
+  white-space: nowrap;
+}
+
+/* Large Desktop */
+@media screen and (min-width: 1200px) {
+  .topbar {
+    padding: 20px 40px;
+  }
+  
+  .topbar_left {
+    max-width: 350px;
+  }
+}
+
+/* Desktop */
+@media screen and (max-width: 1199px) and (min-width: 1025px) {
+  .topbar {
+    padding: 15px 30px;
+  }
+}
+
+/* Tablet */
+@media screen and (max-width: 1024px) and (min-width: 769px) {
+  .topbar {
+    padding: 12px 20px;
+  }
+  
+  .Topbar_content {
+    gap: 12px;
+  }
+  
+  .topbar_left {
+    min-width: 180px;
+    max-width: 350px;
+  }
+  
+  .topbar_right {
+    gap: 12px;
+  }
+  
+  .topbar_right img {
+    width: 32px;
+    height: 32px;
+  }
+  
+  .topbar_user h4 {
+    font-size: 15px;
+  }
+  
+  .topbar_user p {
+    font-size: 11px;
+  }
+}
+
+/* Mobile Large */
+@media screen and (max-width: 768px) and (min-width: 481px) {
+  .topbar {
+    padding: 10px 15px;
+  }
+  
+  .Topbar_content {
+    gap: 10px;
+  }
+  
+  .topbar_left {
+    min-width: 150px;
+    max-width: 280px;
+    padding: 6px 12px;
+  }
+  
+  .topbar_left span {
+    font-size: 14px;
+  }
+  
+  .Topbar_input {
+    font-size: 13px;
+  }
+  
+  .topbar_right {
+    gap: 10px;
+  }
+  
+  .topbar_right p {
+    font-size: 18px;
+  }
+  
+  .topbar_right img {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .topbar_user h4 {
+    font-size: 14px;
+  }
+  
+  .topbar_user p {
+    font-size: 10px;
+  }
+  
+  .topbar_spanie {
+    height: 18px;
+  }
+}
+
+/* Mobile Small */
+@media screen and (max-width: 480px) {
+  .topbar {
+    padding: 8px 10px;
+  }
+  
+  .Topbar_content {
+    gap: 8px;
+    flex-wrap: nowrap; /* Prevent wrapping */
+  }
+  
+  .topbar_left {
+    min-width: 120px;
+    max-width: none; /* Remove max-width constraint */
+    flex: 1;
+    padding: 5px 10px;
+  }
+  
+  .topbar_left span {
+    font-size: 13px;
+  }
+  
+  .Topbar_input {
+    font-size: 12px;
+    min-width: 80px;
+  }
+  
+  .topbar_right {
+    gap: 8px;
+    flex-shrink: 0;
+    display: none;
+  }
+  
+  /* Hide separators on small mobile */
+  .topbar_spanie {
+    display: none;
+  }
+  
+  .topbar_right p {
+    font-size: 16px;
+    padding: 3px;
+  }
+  
+  .topbar_right img {
+    width: 28px;
+    height: 28px;
+  }
+  
+  .topbar_user {
+    display: none; /* Hide user info on very small screens */
+  }
+}
+
+/* Extra Small Mobile */
+@media screen and (max-width: 360px) {
+  .topbar {
+    padding: 6px 8px;
+  }
+  
+  .topbar_left {
+    min-width: 60px;
+    padding: 4px 8px;
+  }
+  
+  .topbar_left span {
+    font-size: 12px;
+  }
+  
+  .Topbar_input {
+    font-size: 11px;
+    min-width: 60px;
+    width: 60%;
+  }
+  
+  .topbar_right {
+    gap: 6px;
+    display: none;
+  }
+  
+  .topbar_right p {
+    font-size: 14px;
+    padding: 2px;
+  }
+  
+  .topbar_right img {
+    width: 24px;
+    height: 24px;
+  }
+  
+  /* Show only essential icons */
+  .topbar_right p:first-child {
+    display: none; /* Hide notifications */
+  }
+}

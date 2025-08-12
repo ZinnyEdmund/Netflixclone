@@ -1,0 +1,170 @@
+body {
+  margin: 0;
+  padding: 0;
+  color: #fff;
+}
+
+.faq-container {
+  width: 78%;
+  margin: 0 auto;
+  font-family: sans-serif;
+}
+
+.faq-item {
+  padding: 4px 0;
+}
+
+.faq-question {
+  background-color: #312e2e;
+  height: 13vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  padding: 0 20px;
+}
+
+.faq-question:hover {
+  background-color: #3c3939;
+}
+
+.faq-question:not(:hover) {
+  transition-delay: 0.1s;
+}
+
+.faq-question h3 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: normal;
+}
+
+.faq-question span {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.faq-answer {
+  white-space: pre-line;
+  color: #fff;
+  background-color: #312e2e;
+  font-size: 24px;
+  font-weight: normal;
+  margin: 2px 0 0 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  line-height: 1.45;
+}
+
+/* Responsiveness */
+@media screen and (max-width: 320px) {
+  .faq-container {
+    width: 90%;
+    margin-top: 50px;
+  }
+
+  .faq-container h2 {
+    font-weight: normal;
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+
+  .faq-question h3 {
+    font-size: 18px;
+    font-weight: normal;
+  }
+
+  .faq-answer {
+    font-size: 18px;
+    font-weight: normal;
+  }
+
+  .Spaniie {
+    size: 20px;
+  }
+}
+
+
+@media screen and (max-width: 767px) {
+  .faq-container {
+    width: 90%;
+    margin-top: 50px;
+  }
+
+  .faq-container h2 {
+    font-weight: normal;
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+
+  .faq-question h3 {
+    font-size: 18px;
+    font-weight: normal;
+  }
+
+  .faq-answer {
+    font-size: 18px;
+    font-weight: normal;
+  }
+
+  .Spaniie {
+    size: 20px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .faq-container {
+    width: 90%;
+    margin-top: 50px;
+  }
+
+  .faq-container h2 {
+    font-weight: normal;
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+
+  .faq-question h3 {
+    font-size: 1.45rem;
+    font-weight: normal;
+  }
+
+  .faq-answer {
+    font-size: 1.04rem;
+    font-weight: normal;
+  }
+
+  .Spaniie {
+    size: 20px;
+  }
+}
+
+
+@media screen and (min-width: 2560px) {
+  .faq-container {
+    width: 45%;
+    margin-top: 50px;
+  }
+
+  .faq-container h2 {
+    font-weight: normal;
+    font-size: 3rem;
+    margin-bottom: 20px;
+  }
+
+  .faq-question h3 {
+    font-size: 2rem;
+    font-weight: normal;
+  }
+
+  .faq-answer {
+    font-size: 2em;
+    font-weight: normal;
+  }
+
+  .Spaniie {
+    size: 20px;
+  }
+}
+

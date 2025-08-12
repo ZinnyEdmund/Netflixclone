@@ -1,0 +1,444 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.Main {
+  background-image: url(../../Images/bg.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 95vh;
+  padding: 0;
+  margin: 0;
+}
+
+.hero {
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+}
+
+.header img {
+  height: 45px; /* Adjust if needed */
+}
+
+.header button,
+.signin-button {
+  color: #fff;
+  background-color: #e50914;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.header button:hover,
+.signin-button:hover {
+  background-color: #f40612;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.signin-button:focus {
+  outline: 2px solid #e50914;
+  outline-offset: 2px;
+}
+
+.Text-center {
+  text-align: center;
+  justify-content: center;
+  color: #fff;
+  margin-top: 80px;
+  width: 100%;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+@keyframes fadeInUp {
+  from { 
+    opacity: 0; 
+    transform: translateY(30px); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
+}
+
+.myie {
+  width: 40%;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+.Text-center h1 {
+  font-size: 5rem;
+  font-weight: bolder;
+  margin-bottom: 15px;
+}
+
+.Text-center h3 {
+  font-weight: normal;
+  margin-bottom: 25px;
+}
+
+.Text-center p {
+  font-size: 16px;
+  font-weight: normal;
+  margin-bottom: 20px;
+}
+
+.Sctt {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+/* Email input container */
+.email-input-container {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  max-width: 400px;
+}
+
+.inptBox {
+  background-color: rgba(70, 69, 69, 0.256);
+  border: 1px solid grey;
+  border-radius: 5px;
+  width: 350px;
+  padding: 20px;
+  transition: all 0.3s ease;
+}
+
+.inputContent {
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+  padding-left: 15px;
+  width: 100%;
+  border: none;
+  background: transparent;
+  outline: none;
+}
+
+/* Input validation styles */
+.inputContent.input-error {
+  border: 2px solid #e87c03;
+  box-shadow: 0 0 0 1px rgba(232, 124, 3, 0.3);
+}
+
+.inputContent.input-valid {
+  border: 2px solid #46d369;
+  box-shadow: 0 0 0 1px rgba(70, 211, 105, 0.3);
+}
+
+.inputContent:focus {
+  border-color: #e50914;
+  box-shadow: 0 0 0 2px rgba(229, 9, 20, 0.2);
+}
+
+.inputContent:disabled {
+  background-color: rgba(70, 69, 69, 0.5);
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.inptBox::placeholder,
+.inputContent::placeholder {
+  text-align: left;
+  color: #b7b1b1;
+  padding-left: 15px;
+  font-size: 17px;
+  font-weight: 300;
+}
+
+/* Error message */
+.error-message {
+  position: absolute;
+  bottom: -25px;
+  left: 15px;
+  color: #e87c03;
+  font-size: 13px;
+  font-weight: 400;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 4px 8px;
+  border-radius: 4px;
+  z-index: 10;
+}
+
+/* Success checkmark */
+.success-message {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #46d369;
+  font-weight: bold;
+  font-size: 18px;
+  z-index: 10;
+}
+
+.StartButton {
+  background-color: #e50914;
+  color: #fff;
+  font-size: 20px;
+  border: none;
+  border-radius: 5px;
+  padding: 15px 30px;
+  margin-left: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.StartButton:not(:disabled):hover {
+  background-color: #f40612;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.StartButton:not(:disabled):active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.StartButton:disabled {
+  background-color: #666;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.StartButton.loading {
+  background-color: #e50914;
+  cursor: wait;
+}
+
+.StartButton:focus {
+  outline: 2px solid #e50914;
+  outline-offset: 2px;
+}
+
+/* Small loading spinner for button */
+.loading-spinner-small {
+  width: 16px;
+  height: 16px;
+  border: 2px solid transparent;
+  border-top: 2px solid white;
+  border-radius: 50%;
+  display: inline-block;
+  animation: spin 1s linear infinite;
+  margin-right: 8px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  vertical-align: middle;
+}
+
+/* Responsiveness */
+/* === Base styles (Mobile: 320px) === */
+@media screen and (min-width: 320px) {
+  .Main {
+    height: 550px;
+    background-size: cover;
+    background-position: center;
+    padding: 0;
+    margin: 0;
+  }
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+  }
+
+  .header img {
+    height: 27px;
+    margin: 0;
+  }
+
+  .Text-center {
+    text-align: center;
+    width: 100%;
+    margin: 45px 0;
+  }
+
+  .Text-center h1 {
+    font-size: 28px;
+    width: 90%;
+    margin: 0 auto 20px auto;
+  }
+
+  .Text-center h3 {
+    margin: 20px 0;
+    font-size: 16px;
+  }
+
+  .Text-center p {
+    font-size: 14px;
+    width: 90%;
+    text-align: center;
+    margin: 0 auto;
+    line-height: 1.35;
+  }
+
+  .myie {
+    margin: 0 auto;
+    text-align: center;
+    width: fit-content;
+  }
+
+  .email-input-container {
+    width: 100%;
+    max-width: none;
+  }
+
+  .inptBox {
+    width: 70%;
+    background-color: rgba(70, 69, 69, 0.256);
+    border: 1px solid grey;
+    border-radius: 5px;
+    padding: 13px;
+  }
+
+  .Sctt {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 25px;
+    gap: 15px;
+  }
+
+  .StartButton {
+    font-size: 16px;
+    padding: 13px 20px;
+    margin-left: 0;
+    width: 80%;
+    max-width: 300px;
+  }
+
+  .error-message {
+    bottom: -20px;
+    font-size: 12px;
+    left: 10px;
+  }
+}
+
+/* === Tablet: 768px and up === */
+@media screen and (min-width: 768px) {
+  .Main {
+    height: 500px;
+  }
+
+  .Text-center h1 {
+    font-size: 36px;
+    width: 50%;
+  }
+
+  .Text-center p {
+    width: 60%;
+    font-size: 16px;
+  }
+
+  .Sctt {
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+    margin: 25px auto;
+  }
+
+  .email-input-container {
+    max-width: 400px;
+  }
+
+  .inptBox {
+    width: 100%;
+  }
+
+  .StartButton {
+    width: auto;
+    margin-left: 10px;
+  }
+
+  .error-message {
+    bottom: -25px;
+    font-size: 13px;
+    left: 15px;
+  }
+}
+
+/* === Medium screens: 1024px and up === */
+@media screen and (min-width: 1024px) {
+  .Main {
+    height: 600px;
+  }
+
+  .Text-center h1 {
+    font-size: 3.5rem;
+  }
+
+  .Text-center h3 {
+    font-size: 20px;
+  }
+
+  .Text-center p {
+    width: 50%;
+    font-size: 20px;
+  }
+
+  .email-input-container {
+    max-width: 450px;
+  }
+
+  .inptBox {
+    width: 100%;
+  }
+}
+
+/* === Large screens: 1440px and up === */
+@media screen and (min-width: 1440px) {
+  .Main {
+    height: 95vh;
+  }
+
+  .Text-center {
+    margin-top: 80px;
+  }
+
+  .Text-center h1 {
+    font-size: 5rem;
+  }
+
+  .email-input-container {
+    max-width: 400px;
+  }
+
+  .inptBox {
+    width: 350px;
+  }
+}

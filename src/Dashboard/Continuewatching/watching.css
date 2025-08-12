@@ -1,0 +1,135 @@
+.MovieCard_item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.De_movieheader {
+  padding: 20px;
+  color: #131720;
+  font-size: 20px;
+}
+
+.movies-container {
+  display: grid;
+  max-width: 1000px;
+  flex-wrap: wrap;
+  grid-template-columns: repeat(5, 2fr);
+  gap: 20px;
+  color: #131720;
+  padding: 23px;
+}
+
+.movie-card {
+  border-radius: 10px;
+  overflow: hidden;
+  color: black;
+  transition: transform 0.2s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.movie-card img {
+  width: 100%;
+  height: auto;
+}
+
+.movie-card h3 {
+  color: #353535;
+  padding: 6px;
+  font-size: 16px;
+  text-align: center;
+}
+
+.movie-card:hover {
+  transform: translateY(-5px);
+}
+
+@media screen and (min-width: 320px) {
+ .MovieCard_item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.De_movieheader {
+  padding: 20px;
+  color: #131720;
+  font-size: 16px; /* smaller by default */
+}
+
+.movies-container {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr); /* 1 card per row on mobile */
+  gap: 20px;
+  color: #131720;
+  padding: 23px;
+}
+
+.movie-card {
+  border-radius: 10px;
+  overflow: hidden;
+  color: black;
+  transition: transform 0.2s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.movie-card img {
+  width: 100%;
+  height: auto;
+}
+
+.movie-card h3 {
+  color: #353535;
+  padding: 6px;
+  font-size: 14px; /* smaller for mobile */
+  text-align: center;
+}
+
+.movie-card:hover {
+  transform: translateY(-5px);
+}
+}
+
+/* Tablets (≥768px) - show 3 cards per row */
+@media screen and (min-width: 768px) {
+  .De_movieheader {
+    font-size: 18px;
+  }
+
+  .movies-container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .movie-card h3 {
+    font-size: 15px;
+  }
+}
+
+/* Desktops (≥1024px) - show 5 cards per row */
+@media screen and (min-width: 1024px) {
+.watching_cont {
+    margin: 15px auto;
+    width: fit-content;
+}
+
+  .movies-container {
+    grid-template-columns: repeat(4, 1fr);
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .movie-card h3 {
+    font-size: 16px;
+  }
+}
+
+/* Ultra-wide screens (≥2560px) - wider cards */
+@media screen and (min-width: 2560px) {
+  .movies-container {
+    max-width: 2000px;
+  }
+
+  .movie-card h3 {
+    font-size: 18px;
+  }
+}

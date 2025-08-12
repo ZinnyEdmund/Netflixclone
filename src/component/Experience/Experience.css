@@ -1,0 +1,165 @@
+body {
+  box-sizing: border-box;
+  background-color: #000;
+}
+
+.container {
+  color: white;
+  justify-content: center;
+  align-items: center;
+  /* width: 100%; */
+  margin: 30px;
+  padding: 40px 20px;
+}
+
+.container_header h2 {
+  font-weight: 500;
+  font-size: 25px;
+  margin-bottom: 30px;
+  padding-left: 130px;
+}
+
+.container_content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.container_texts {
+  color: #ffffff;
+  background: linear-gradient(to bottom right, #060623bf, #8d0b8d33);
+  border-radius: 16px;
+  padding: 20px 15px 80px 15px;
+  max-width: 220px;
+  width: 100%;
+}
+
+.container_texts h4 {
+  font-weight: 500;
+  font-size: 25px;
+  margin: 0;
+}
+
+.container_texts p {
+  color: #ecececac;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.22;
+  margin-top: 17px;
+}
+
+.faq-container h2 {
+  font-weight: normal;
+  font-size: 26px;
+}
+
+/* Responsiveness */
+@media screen and (max-width: 767px) {
+  .container {
+    padding: 0;
+    margin-bottom: 100px;
+  }
+
+  .reenah {
+    margin-top: 70px;
+    margin-bottom: 0;
+  }
+
+  .container_content {
+    max-width: 700px;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+  }
+
+  .container_header h2 {
+    padding-left: 10px;
+    font-size: 18px;
+    font-weight: normal;
+    margin-bottom: 15px;
+  }
+
+  .container_texts {
+    width: 90%; /* Take 90% of screen width */
+    max-width: 300px; /* But not more than 300px per box */
+    /* padding: 16px; */
+    margin: 0 auto;
+    box-sizing: border-box;
+  }
+
+  .container_texts p {
+    padding: 0;
+    margin: 0;
+    font-size: 15px;
+    font-weight: normal;
+  }
+
+  .container_texts h4 {
+    font-weight: normal;
+    font-size: 20px;
+    margin: 0 0 10px 0;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .container {
+    padding: 0;
+    margin-bottom: 100px;
+  }
+
+  .reenah {
+    /* margin-top: 70px;
+    margin-bottom: 0; */
+    margin: 40px auto;
+    width: 100%;
+  }
+
+  .container_content {
+    max-width: 700px;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin: 0 auto;
+  }
+
+  .container_header h2 {
+    padding-left: 10px;
+    font-size: 18px;
+    font-weight: normal;
+    margin-bottom: 15px;
+    margin-left: 150px;
+  }
+
+  .container_texts {
+    width: 100%; /* Take 90% of screen width */
+    max-width: 300px; /* But not more than 300px per box */
+    /* padding: 16px; */
+    margin: 0 auto;
+    box-sizing: border-box;
+  }
+
+  .container_texts p {
+    padding: 0;
+    margin: 0;
+    font-size: 15px;
+    font-weight: normal;
+  }
+
+  .container_texts h4 {
+    font-weight: normal;
+    font-size: 20px;
+    margin: 0 0 10px 0;
+  }
+}
+
+@media screen and (min-width: 2560px) {
+    .container_header h2 {
+    padding-left: 10px;
+    font-size: 2rem ;
+    font-weight: normal;
+    margin-bottom: 15px;
+    margin-left: 700px;
+  }
+  
+}

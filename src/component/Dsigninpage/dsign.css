@@ -1,0 +1,591 @@
+.dsign-container {
+  background-image: url(../../Images/bg.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 135vh;
+  padding: 0;
+  margin: 0;
+}
+
+.dsign-image {
+  /* width: 100%; */
+  padding: 2rem;
+  margin: 0 40px;
+}
+
+.dsign-image img {
+  height: 45px;
+  padding: 0 5rem;
+}
+
+/* .DSIGNER-SECTION {
+
+} */
+
+.dsign-content {
+  background-color: #000000b9;
+  box-sizing: border-box;
+  display: inherit;
+  height: 110vh;
+  width: 36%;
+  padding: 50px;
+  margin: 0 auto;
+  border-radius: 5px;
+}
+
+.dsign-content h1 {
+  font-size: 2em;
+  margin-bottom: 30px;
+}
+
+.Forms input,
+.Second_input input {
+  background-color: rgba(40, 40, 40, 0.338);
+  border: 1px solid #a4a4a491;
+  border-radius: 5px;
+  padding: 20px;
+  width: 90%;
+  outline: none;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.Forms input {
+  margin-bottom: 20px;
+}
+
+.Forms input::placeholder {
+  color: #dadada;
+  font-size: 16px;
+}
+
+.Second_input input::placeholder {
+  color: #dadada;
+  font-size: 16px;
+}
+
+.signin {
+  background-color: #e50914;
+  padding: 10px;
+  width: 100%;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  font-weight: bold;
+  font-size: 17px;
+  margin-bottom: 20px;
+  cursor: pointer;
+  outline: none;
+}
+
+.signin:hover {
+  background-color: #c2131b;
+}
+
+.Forms p {
+  text-align: center;
+  color: #bcbcbcad;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.Sigin_code {
+  background-color: rgba(128, 128, 128, 0.4);
+  padding: 10px;
+  width: 100%;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  font-weight: 500;
+  font-size: 17px;
+  margin-bottom: 20px;
+  cursor: pointer;
+  outline: none;
+}
+
+.Sigin_code:hover {
+  background-color: #80808044;
+  transition: ease-in 0.25s;
+}
+
+.forgotten_password {
+  margin: 0 auto;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.forgotten_password a {
+  text-align: center;
+  font-size: 16px;
+  color: #fff;
+  font-weight: normal;
+}
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.checkbox input[type="checkbox"] {
+  /* hide the native checkbox */
+  appearance: none;
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  border: 2px solid #888;
+  border-radius: 2px;
+  cursor: pointer;
+  position: relative;
+  outline: none;
+}
+
+.checkbox input[type="checkbox"]:checked {
+  background-color: #fff;
+  border-color: #fff;
+}
+
+.checkbox input[type="checkbox"]:checked::after {
+  content: "✔";
+  color: black;
+  font-size: 12px;
+  position: absolute;
+  left: 3px;
+  top: -1px;
+}
+
+.Form_p1 {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.Form_p1 a {
+  text-decoration: none;
+  font-weight: bold;
+  color: #fff;
+  font-size: 16px;
+}
+
+.Form_p1 a:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.Form_p2 {
+  font-size: small;
+  color: #888;
+  margin-bottom: 10px;
+}
+
+.showmore {
+  color: #448df4d9;
+  font-size: small;
+  margin-bottom: 15px;
+  cursor: pointer;
+}
+
+.showmore1 {
+  color: #448df4d9;
+  font-size: small;
+  margin-bottom: 15px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.showmore_p {
+  font-size: small;
+  color: #888;
+}
+
+/* Loading container styles for sign-in */
+.loading-container {
+  text-align: center;
+  padding: 40px 20px;
+  color: white;
+}
+
+.loading-container h2 {
+  margin: 20px 0 10px 0;
+  font-size: 24px;
+  color: #e50914; /* Netflix red */
+}
+
+.loading-container p {
+  margin: 10px 0;
+  font-size: 16px;
+  color: #ccc;
+}
+
+/* Loading spinner animation */
+.loading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid #333;
+  border-top: 4px solid #e50914; /* Netflix red */
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 20px auto;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Disable buttons when loading */
+.signin:disabled,
+.Sigin_code:disabled {
+  background-color: #666;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+/* Add some transition effects */
+.dsign-content {
+  transition: all 0.3s ease-in-out;
+}
+
+/* Make the loading state feel more polished */
+.loading-container {
+  animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ====== Tablet and smaller desktops (≤ 1024px) ====== */
+@media (max-width: 1440px) {
+  .dsign-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+  }
+
+  .dsign-image img {
+    height: 45px;
+  }
+
+  .dsign-content {
+    width: 450px;
+    padding: 40px 30px;
+    height: auto;
+  }
+
+  .Forms input,
+  .Second_input input {
+    width: 90%;
+    padding: 15px;
+    font-size: 16px;
+  }
+
+  .signin,
+  .Sigin_code {
+    font-size: 16px;
+    padding: 10px;
+  }
+
+  .Form_p1,
+  .Form_p1 a,
+  .forgotten_password a {
+    font-size: 15px;
+  }
+
+  .dsign-content h1 {
+    font-size: 1.8em;
+    text-align: center;
+  }
+}
+
+/* ====== Tablet and smaller desktops (≤ 1024px) ====== */
+@media (max-width: 1024px) {
+  .dsign-image {
+    margin: 0 auto;
+    align-items: center;
+    justify-content: center;
+    padding-left: 350px;
+  }
+
+  .dsign-content {
+    width: 450px;
+    padding: 40px 30px;
+    height: auto;
+  }
+
+  .Forms input,
+  .Second_input input {
+    width: 90%;
+    padding: 15px;
+    font-size: 16px;
+  }
+
+  .signin,
+  .Sigin_code {
+    font-size: 16px;
+    padding: 10px;
+  }
+
+  .Form_p1,
+  .Form_p1 a,
+  .forgotten_password a {
+    font-size: 15px;
+  }
+
+  .dsign-content h1 {
+    font-size: 1.8em;
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .dsign-content {
+    width: 90%;
+    padding: 25px 20px;
+    height: auto;
+  }
+
+  .Forms input,
+  .Second_input input {
+    background-color: rgba(40, 40, 40, 0.338);
+    border: 1px solid #a4a4a491;
+    border-radius: 5px;
+    /* padding: 20px; */
+    width: 90%;
+    outline: none;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 500;
+  }
+  .dsign-image {
+    padding: 1.5rem;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .dsign-image img {
+    height: 40px;
+    padding: 0;
+  }
+
+  .signin,
+  .Sigin_code {
+    font-size: 15px;
+    padding: 10px;
+  }
+
+  .Form_p1,
+  .Form_p1 a,
+  .forgotten_password a,
+  .Form_p2,
+  .showmore,
+  .showmore1,
+  .showmore_p {
+    font-size: 13px;
+    text-align: center;
+  }
+
+  .checkbox {
+    font-size: 13px;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .dsign-content h1 {
+    font-size: 1.5em;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+}
+
+/* ====== Mobile phones (≤ 600px) ====== */
+@media (max-width: 600px) {
+  .dsign-content {
+    width: 90%;
+    padding: 25px 20px;
+    height: auto;
+  }
+
+  .Forms input,
+  .Second_input input {
+    background-color: rgba(40, 40, 40, 0.338);
+    border: 1px solid #a4a4a491;
+    border-radius: 5px;
+    /* padding: 20px; */
+    width: 90%;
+    outline: none;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 500;
+  }
+  .dsign-image {
+    padding: 1.5rem;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .dsign-image img {
+    height: 40px;
+    padding: 0;
+  }
+
+  .signin,
+  .Sigin_code {
+    font-size: 15px;
+    padding: 10px;
+  }
+
+  .Form_p1,
+  .Form_p1 a,
+  .forgotten_password a,
+  .Form_p2,
+  .showmore,
+  .showmore1,
+  .showmore_p {
+    font-size: 13px;
+    text-align: center;
+  }
+
+  .checkbox {
+    font-size: 13px;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .dsign-content h1 {
+    font-size: 1.5em;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+}
+
+/* ====== Small screens (≤ 400px) ====== */
+
+@media (max-width: 425px) {
+  .dsign-content {
+    width: 95%;
+    padding: 20px 15px;
+  }
+
+  .Forms input,
+  .Second_input input {
+    background-color: rgba(40, 40, 40, 0.338);
+    border: 1px solid #a4a4a491;
+    border-radius: 5px;
+    /* padding: 20px; */
+    width: 90%;
+    outline: none;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 500;
+  }
+
+  .signin,
+  .Sigin_code {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .checkbox input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+  }
+
+  .checkbox input[type="checkbox"]:checked::after {
+    font-size: 11px;
+    top: -1px;
+    left: 3px;
+  }
+}
+
+@media (max-width: 400px) {
+  .dsign-content {
+    width: 95%;
+    padding: 20px 15px;
+  }
+
+  .Forms input,
+  .Second_input input {
+    background-color: rgba(40, 40, 40, 0.338);
+    border: 1px solid #a4a4a491;
+    border-radius: 5px;
+    /* padding: 20px; */
+    width: 90%;
+    outline: none;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 500;
+  }
+
+  .signin,
+  .Sigin_code {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .checkbox input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+  }
+
+  .checkbox input[type="checkbox"]:checked::after {
+    font-size: 11px;
+    top: -1px;
+    left: 3px;
+  }
+}
+
+@media (max-width: 320px) {
+  .dsign-content {
+    width: 95%;
+    padding: 20px 15px;
+  }
+
+  .Forms input,
+  .Second_input input {
+    background-color: rgba(40, 40, 40, 0.338);
+    border: 1px solid #a4a4a491;
+    border-radius: 5px;
+    /* padding: 20px; */
+    width: 90%;
+    outline: none;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 500;
+  }
+
+  .signin,
+  .Sigin_code {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .checkbox input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+  }
+
+  .checkbox input[type="checkbox"]:checked::after {
+    font-size: 11px;
+    top: -1px;
+    left: 3px;
+  }
+}

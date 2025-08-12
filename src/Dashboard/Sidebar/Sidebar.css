@@ -1,0 +1,250 @@
+/* Sidebar.css */
+.sidebar {
+  width: 240px; /* Fixed - was commented out */
+  height: 96vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  z-index: 999;
+  justify-content: space-between;
+  background-color: #ffffff; /* Added background */
+  box-sizing: border-box; /* Added for better sizing */
+}
+
+.my_logo {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 16px;
+  color: #131720;
+}
+
+.dot {
+  color: red;
+}
+
+.menu {
+  flex: 1;
+}
+
+.menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px 0;
+  transition: all 0.2s ease;
+}
+
+.menu li {
+  display: flex;
+  font-size: 15px;
+  font-weight: normal;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  padding: 9px 0;
+  cursor: pointer;
+  color: #233339;
+  transition: all 0.2s ease;
+}
+
+.menu ul li:hover {
+  background-color: rgba(255, 71, 71, 0.1);
+  padding-left: 16px;
+  border-left: 3px solid red;
+
+  transform: translateX(4px);
+}
+
+nav ul li:hover .side_icons {
+  color: red;
+  transition: color 0.3s ease;
+}
+
+nav ul li:hover span {
+  font-weight: 600;
+  color: #233339;
+  transition: color 0.3s ease;
+}
+
+.menu-label {
+  font-size: 14px;
+  color: #233339;
+  font-weight: 600;
+  margin: 12px 5px;
+}
+
+.side_icons {
+  font-size: 20px; /* Fixed - was 'size: 20px' */
+  color: #233339;
+}
+
+.my_menu-list:hover {
+  color: #ff4747;
+}
+
+/* Badge Box */
+.badge {
+  width: calc(100% - 16px);
+  background: linear-gradient(135deg, #e4e7f5 0%, #f0f2f8 100%);
+  padding: 24px 16px;
+  border-radius: 16px;
+  text-align: center;
+  position: relative;
+  margin: 16px 8px 8px 8px;
+  box-sizing: border-box;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.badge_icon {
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(135deg, #819198 0%, #6b7680 100%);
+  padding: 12px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.badge p {
+  color: #273136;
+  font-size: 14px;
+  font-weight: 600;
+  margin: 16px 0 8px 0;
+}
+
+.badge_button {
+  margin-top: 12px;
+  background: linear-gradient(135deg, #819198 0%, #6b7680 100%);
+  color: #fff;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.badge_button:hover {
+  background: linear-gradient(135deg, #6b7680 0%, #424e54 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Desktop - keep sidebar visible */
+@media (min-width: 769px) {
+  .sidebar {
+    transform: translateX(0);
+    position: fixed;
+  }
+}
+
+/* Tablet and Mobile */
+@media (max-width: 1024px) {
+  .sidebar {
+    width: 240px;
+    height: 100vh;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+  }
+
+  .sidebar.show {
+    transform: translateX(0);
+  }
+
+  .sidebar.hide {
+    transform: translateX(-100%);
+  }
+
+  .badge {
+    width: 85%;
+    padding: 20px;
+    margin: 15px auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    width: 240px;
+    height: 100vh;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+  }
+
+  .sidebar.show {
+    transform: translateX(0);
+  }
+
+  .sidebar.hide {
+    transform: translateX(-100%);
+  }
+
+  .badge {
+    width: 85%;
+    padding: 20px;
+    margin: 15px auto;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  .sidebar {
+    width: 220px;
+  }
+
+  .my_logo {
+    font-size: 22px;
+  }
+
+  .menu li {
+    font-size: 14px;
+    padding: 8px 0;
+  }
+
+  .side_icons {
+    font-size: 18px;
+  }
+
+  .badge {
+    width: 90%;
+    padding: 16px;
+  }
+
+  .badge p {
+    font-size: 14px;
+  }
+
+  .badge_button {
+    padding: 8px 12px;
+    font-size: 13px;
+  }
+}
+
+/* Extra Small Mobile */
+@media (max-width: 360px) {
+  .sidebar {
+    width: 200px;
+  }
+
+  .my_logo {
+    font-size: 20px;
+  }
+
+  .menu li {
+    font-size: 13px;
+    gap: 10px;
+  }
+
+  .side_icons {
+    font-size: 16px;
+  }
+}
