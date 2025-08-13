@@ -55,6 +55,16 @@ body {
 }
 
 /* Responsiveness */
+@media screen and (max-width: 320px) {
+    .container_header h2 {
+    /* padding-left: 10px; */
+    text-align: center;
+    font-size: 18px;
+    font-weight: normal;
+    margin-bottom: 15px;
+  }
+}
+
 @media screen and (max-width: 767px) {
   .container {
     padding: 0;
@@ -102,7 +112,7 @@ body {
   }
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (min-width: 1024px) {
   .container {
     padding: 0;
     margin-bottom: 100px;
