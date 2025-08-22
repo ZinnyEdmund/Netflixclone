@@ -43,7 +43,7 @@ const Categories = () => {
       type: "TV Series",
       genres: "Survival drama",
       description:
-        "Hundreds of cash-strapped players accept a strange invitation to compete in deadly children’s games for a massive prize, but only one can survive.",
+        "Hundreds of cash-strapped players accept a strange invitation to compete in deadly children's games for a massive prize, but only one can survive.",
       img: squidgame1,
     },
     {
@@ -54,7 +54,7 @@ const Categories = () => {
       type: "Netflix",
       genres: "Drama",
       description:
-        "A struggling single Black mother’s day spirals out of control, forcing impossible choices as she fights to protect her ill daughter.",
+        "A struggling single Black mother's day spirals out of control, forcing impossible choices as she fights to protect her ill daughter.",
       img: straw1,
     },
     {
@@ -108,7 +108,7 @@ const Categories = () => {
       type: "TV Series",
       genres: "Action",
       description:
-        "Detective Walker dives into a criminal underworld to rescue a politician’s son after a drug deal collapses.",
+        "Detective Walker dives into a criminal underworld to rescue a politician's son after a drug deal collapses.",
       img: havoc1,
     },
     {
@@ -172,61 +172,72 @@ const Categories = () => {
         <h1>Trending Now</h1>
       </div>
 
-      {selectedMovie ? (
-        <div className="movie-details">
-          <img src={selectedMovie.img} alt={selectedMovie.title} />
-          <h3>{selectedMovie.title}</h3>
-          <div>
-            <p>{selectedMovie.year}</p>
-            <p>{selectedMovie.ageRating}</p>
-            <p>{selectedMovie.type}</p>
-            <p>{selectedMovie.genres}</p>
-          </div>
-          <p>{selectedMovie.description}</p>
-          <button className="Movie_Button1">
-            Get Started{" "}
-            <span className="span">
-              <IoIosArrowForward />
-            </span>
-          </button>
-          <button onClick={() => setSelectedMovie(null)} className="Movie_button">
-            <span>
-              <LiaTimesSolid size={25} />{" "}
-            </span>
-          </button>
-        </div>
-      ) : (
-        <div className="slider-container">
-          {position > 0 && (
-            <button className="slider-btn left" onClick={() => moveSlide(-2)}>
-              <MdArrowBackIos color="white" size={20} />
-            </button>
-          )}
-
-          <div className="slider">
-            <div
-              className="slide-track"
-              style={{ transform: `translateX(${-position * slideWidth}px)` }}
+      {selectedMovie && (
+        <div className="modal-overlay" onClick={() => setSelectedMovie(null)}>
+          <div className="movie-details" onClick={(e) => e.stopPropagation()}>
+            <button 
+              onClick={() => setSelectedMovie(null)} 
+              className="close-btn"
+              aria-label="Close modal"
             >
-              {movieList.map((src, index) => (
-                <img
-                  key={index}
-                  src={src.img}
-                  alt={`Slide ${index + 1}`}
-                  className="slide"
-                  onClick={() => setSelectedMovie(src)}
-                />
-              ))}
+              <LiaTimesSolid size={24} />
+            </button>
+            
+            <div className="movie-image-container">
+              <img src={selectedMovie.img} alt={selectedMovie.title} />
+            </div>
+            
+            <div className="movie-content">
+              <h3>{selectedMovie.title}</h3>
+              
+              <div className="movie-meta">
+                <span className="meta-item">{selectedMovie.year}</span>
+                <span className="meta-item">{selectedMovie.ageRating}</span>
+                <span className="meta-item">{selectedMovie.type}</span>
+                <span className="meta-item">{selectedMovie.genres}</span>
+              </div>
+              
+              <p className="movie-description">{selectedMovie.description}</p>
+              
+              <button className="get-started-btn">
+                <span>Get Started</span>
+                <IoIosArrowForward size={20} />
+              </button>
             </div>
           </div>
-
-          {position < maxPosition && (
-            <button className="slider-btn right" onClick={() => moveSlide(2)}>
-              <MdArrowForwardIos color="white" size={20} />
-            </button>
-          )}
         </div>
       )}
+
+      <div className="slider-container">
+        {position > 0 && (
+          <button className="slider-btn left" onClick={() => moveSlide(-2)}>
+            <MdArrowBackIos color="white" size={20} />
+          </button>
+        )}
+
+        <div className="slider">
+          <div
+            className="slide-track"
+            style={{ transform: `translateX(${-position * slideWidth}px)` }}
+          >
+            {movieList.map((movie) => (
+              <img
+                key={movie.id}
+                src={movie.img}
+                alt={movie.title}
+                className="slide"
+                onClick={() => setSelectedMovie(movie)}
+              />
+            ))}
+          </div>
+        </div>
+
+        {position < maxPosition && (
+          <button className="slider-btn right" onClick={() => moveSlide(2)}>
+            <MdArrowForwardIos color="white" size={20} />
+          </button>
+        )}
+      </div>
     </section>
   );
 };
