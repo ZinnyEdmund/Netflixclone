@@ -56,7 +56,7 @@ const Dsignup = () => {
       setLoadingMessage("Almost ready...");
       await new Promise(resolve => setTimeout(resolve, 500));
 
-      navigate("/dashboard"); // you'll build this later
+      navigate("/Mydashboard"); // you'll build this later
 
     } catch (error: unknown) {
       setIsLoading(false);
